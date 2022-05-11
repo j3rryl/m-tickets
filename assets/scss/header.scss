@@ -1,14 +1,24 @@
 header{
     width: 100%;
-    height: fit-content;
     margin: 0;
     box-shadow: 1vw 1vh 10px #888888;
+    background-color: #fff;
+    margin-bottom: 4vh;
     nav{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0;
+        padding: 3vh 2vw;
         .logo{
             font-size: 1.5rem;
+            img{
+                width: 13vw;
+                height: 6vh;
+                background: lightgrey;
+                padding: 2vh 0;
+                border-radius: 14px;
+            }
         }
         .logo:hover{
             cursor: pointer;
@@ -35,7 +45,7 @@ header{
             width: 8vw;
             height: 6vh;
             background-color: #fff;
-            border: 1px solid black;
+            border: .5px solid black;
             border-radius: 14px;
         }
         button:hover{
