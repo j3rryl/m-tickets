@@ -36,5 +36,5 @@
 </div>
 
 <div class="credit">&copy; 2022 mtickets.com<span></span> | all rights reserved! </div>
-
 </footer>
+</body>

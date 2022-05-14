@@ -4,7 +4,7 @@ footer{
     height: fit-content;
     margin: 0 auto;
     padding: 0 2vw 2vh 2vw;
-    border-radius: 14px;
+    border-radius: 10px 0;
     .footer-container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
@@ -13,7 +13,7 @@ footer{
             text-transform: capitalize;
             h3{
                 color:#fff;
-                font-size: 1.5rem;
+                font-size: 1rem;
                 padding-bottom: 2rem;
             }
             a{
@@ -32,7 +32,7 @@ footer{
                 color: #56A099;
              }
              a:hover i{
-                padding-right: 2vw;
+                padding-right: 1.5vw;
              }
         }
      }

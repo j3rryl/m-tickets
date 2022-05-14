@@ -6,7 +6,7 @@ footer {
   height: fit-content;
   margin: 0 auto;
   padding: 0 2vw 2vh 2vw;
-  border-radius: 14px;
+  border-radius: 10px 0;
 }
 
 footer .footer-container {
@@ -23,7 +23,7 @@ footer .footer-container .box {
 
 footer .footer-container .box h3 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding-bottom: 2rem;
 }
 
@@ -47,7 +47,7 @@ footer .footer-container .box a:hover {
 }
 
 footer .footer-container .box a:hover i {
-  padding-right: 2vw;
+  padding-right: 1.5vw;
 }
 
 footer .credit {
