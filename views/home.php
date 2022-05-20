@@ -2,6 +2,11 @@
 require_once('./Database/functions.php');
 $categories=getImages();
 ?>
+<!-- Slider -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<!-- CSS -->
 <link rel="stylesheet" href="assets/css/home.css">
 <h5><span>S</span>Upcoming</h5>
 
@@ -103,7 +108,7 @@ $categories=getImages();
               ?>
                 <div class="swiper-slide">
                 <?php
-                echo '<img src="assets/images/'.$category['image_url'].'"'.' alt="">';
+                echo '<img src="assets/images/categories/'.$category['image_url'].'"'.' alt="">';
                 echo '<h5>'.$category['category_name'].'</h5>';
                 ?>
                 </div>

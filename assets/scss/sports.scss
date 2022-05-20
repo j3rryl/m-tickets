@@ -1,0 +1,41 @@
+.sports{
+    margin: 0 auto;
+    padding: 1vh;
+    h5{
+        margin-left:5vw;
+        font-size: 1.1rem;
+        span{
+            background-color: #68AB6A;
+            height: inherit;
+            width: .1rem;
+            color: #68AB6A;
+            margin: 0 2rem 0 0;
+        }
+    }
+}
+.filter-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin-bottom: 10vh;
+    row-gap: 15vh;
+    
+    .image-container{
+        margin-left: 5vw;
+        width: inherit;
+        img{
+            width: 25vw;
+            height: 60vh;
+            border-radius: 14px;
+        }
+        p{
+            font-weight: 700;
+            // text-align: center;
+            text-transform: capitalize;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

@@ -2,10 +2,6 @@
 <html lang="en">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/index.css">
-    
-    <!-- Slider -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- Header -->
   <?php
@@ -21,5 +17,7 @@
   <?php
     include ('views/templates/footer.php');
   ?>
+  
+  <!-- Scripts -->
   <script src="assets/js/slider.js"></script>
 </html>

@@ -1,0 +1,143 @@
+html, body {
+  max-width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  background-image: linear-gradient(147deg, white 0%, #56A099 74%);
+}
+
+html .signup-container, body .signup-container {
+  margin: 0 auto;
+  float: right;
+  margin-right: 10vw;
+}
+
+html .signup-container form, body .signup-container form {
+  margin: 0 auto;
+  background-color: #f9f6f6;
+  width: 35vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vh 5vw;
+  border-radius: 0 0 30% 30%;
+}
+
+html .signup-container form .password-requirements, body .signup-container form .password-requirements {
+  position: relative;
+  padding: 10px;
+  text-align: left;
+  display: none;
+}
+
+html .signup-container form .style-check, body .signup-container form .style-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+html .signup-container form .style-check i, html .signup-container form .style-check p, body .signup-container form .style-check i, body .signup-container form .style-check p {
+  padding: 0 1vw;
+}
+
+html .signup-container form .style-check i, body .signup-container form .style-check i {
+  color: lightgray;
+}
+
+html .signup-container form .valid, body .signup-container form .valid {
+  color: #68AB6A;
+}
+
+html .signup-container form .invalid, body .signup-container form .invalid {
+  color: lightgray;
+}
+
+html .signup-container form h5, body .signup-container form h5 {
+  text-transform: capitalize;
+  color: #534C11;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: .2rem;
+}
+
+html .signup-container form label, html .signup-container form input, body .signup-container form label, body .signup-container form input {
+  letter-spacing: .1rem;
+  margin: 3vh 2vw;
+  font-weight: 500;
+}
+
+html .signup-container form label, body .signup-container form label {
+  font-weight: 500;
+}
+
+html .signup-container form input, body .signup-container form input {
+  background-color: #E8F0FE;
+  border-radius: 14px;
+  padding: 2vh;
+  border: none;
+  outline: none;
+  width: 30vw;
+}
+
+html .signup-container form button, body .signup-container form button {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 10vw;
+  height: 6vh;
+  background-color: #fff;
+  border: none;
+  border-radius: 14px;
+  -webkit-box-shadow: 1vw 1vh 10px #888888;
+          box-shadow: 1vw 1vh 10px #888888;
+}
+
+html .signup-container form button a, body .signup-container form button a {
+  text-decoration: none;
+  color: black;
+}
+
+html .signup-container form button:hover, body .signup-container form button:hover {
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #56A099;
+}
+
+html .signup-container form button:hover a, body .signup-container form button:hover a {
+  color: white;
+}
+
+html .signup-container form .sign-in, body .signup-container form .sign-in {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #56A099;
+}
+
+html .signup-container form .sign-in:hover, body .signup-container form .sign-in:hover {
+  color: #68AB6A;
+}
