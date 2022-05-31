@@ -7,6 +7,11 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/header.css">
     <title>MTickets</title>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Slider -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
 <header>
@@ -18,13 +23,23 @@
         </div>
         <ul>
             <li><a href="/index.php" class="active">Home</a></li>
-            <li><a href="/views/sports.php">Sports</a></li>
+            <li><a href="/views/events.php">Events</a></li>
             <li><a href="/views/thisweekend.php">This Weekend</a></li>
-            <li><a href="/views/more.php">More</a></li>
+            <li><a class="home-btn">More</a></li>
         </ul>
         <div>
         <li><a href="/views/sell.php">Sell</a></li>
-        <button><a href="/views/login.php">Log In</a></button>
+        <button>
+        <?php
+        if(isset($_SESSION['first_name'])){
+            echo '<a id="logout-bt" href="/controllers/signout.php">Log Out</a>';
+        } else {
+            echo '<a href="/views/login.php">Log In</a>';
+        }
+        ?>
+        </button>
         </div>
     </nav>
 </header>
+<script src="/assets/js/header.js"></script>
+

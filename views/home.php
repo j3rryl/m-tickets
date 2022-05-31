@@ -1,6 +1,16 @@
 <?php
-require_once('./Database/functions.php');
+require_once('../Database/functions.php');
 $categories=getImages();
+$current_month=date("F", strtotime('m'));
+$current_year=date("Y");
+
+// $highlights1=getHighlights(date('5'),$current_year);
+
+$highlights1=getHighlights(5,$current_year);
+$highlights2=getHighlights(6,$current_year);
+$highlights3=getHighlights(7,$current_year);
+$populars=getPopular();
+
 ?>
 <!-- Slider -->
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
@@ -8,93 +18,86 @@ $categories=getImages();
 
 <!-- CSS -->
 <link rel="stylesheet" href="assets/css/home.css">
-<h5><span>S</span>Upcoming</h5>
+<div class="cover-page">
+  <div class="host-own">
+    <p>We're Hosting Our Own</p>
+    <p>Wine & Whine</p>
+    <p style="text-align: right;"><?php echo date('d-m-Y');?></p>
+    <button><a href="#upcoming" >Buy Tickets</a></button>
+  </div>
+</div>
+<h5 id="upcoming"><span>S</span>Upcoming</h5>
 
     <div class="container-1">
     <div class="swiper cube-swipe">
       <div class="swiper-wrapper">
+      <?php
+        foreach ($highlights1 as $highlight){;
+        ?>
         <div class="swiper-slide">
-          <img src="assets/images/events/riara.png" />
+        <?php
+        echo '<img src="assets/images/events/'.$highlight['event_image_url'].'"'.' alt="">';
+        ?>
           <div class="date">
-              <p>10</p><p>May</p>2022<p>
+            <?php 
+            $event_date=$highlight['start_date'];
+            echo '<p>'.date("d",strtotime($event_date)).'</p>
+            <p>'.date("F",strtotime($event_date)).'</p>
+            <p>'.date("Y",strtotime($event_date)).'</p>';
+            ?>
           </div>
         </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>10</p><p>May</p>2022<p>
-          </div>
-          <img src="assets/images/events/aqua.jpeg" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>17</p><p>May</p>2022<p>
-          </div>
-          <img src="assets/images/events/bbq.jpeg" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>27</p><p>May</p>2022<p>
-          </div>
-          <img src="assets/images/events/carnivore.jpeg" />
-        </div>
+        <?php 
+        }
+        ?>
       </div>
     </div>
 
     <div class="swiper cube-swipe">
       <div class="swiper-wrapper">
+      <?php
+        foreach ($highlights2 as $highlight){;
+        ?>
         <div class="swiper-slide">
-        <div class="date">
-              <p>1</p><p>June</p>2022<p>
+        <?php
+        echo '<img src="assets/images/events/'.$highlight['event_image_url'].'"'.' alt="">';
+        ?>
+          <div class="date">
+            <?php 
+            $event_date=$highlight['start_date'];
+            echo '<p>'.date("d",strtotime($event_date)).'</p>
+            <p>'.date("F",strtotime($event_date)).'</p>
+            <p>'.date("Y",strtotime($event_date)).'</p>';
+            ?>
           </div>
-          <img src="assets/images/events/comedynight.jpeg" />
         </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>7</p><p>June</p>2022<p>
-          </div>
-          <img src="assets/images/events/epic.jpeg" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>17</p><p>June</p>2022<p>
-          </div>
-          <img src="assets/images/events/golf.jpeg" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>27</p><p>June</p>2022<p>
-          </div>
-          <img src="assets/images/events/hell.jpeg" />
-        </div>
+        <?php 
+        }
+        ?>
       </div>
     </div>
 
     <div class="swiper cube-swipe">
       <div class="swiper-wrapper">
+      <?php
+        foreach ($highlights3 as $highlight){;
+        ?>
         <div class="swiper-slide">
-        <div class="date">
-              <p>6</p><p>July</p>2022<p>
+        <?php
+        echo '<img src="assets/images/events/'.$highlight['event_image_url'].'"'.' alt="">';
+        ?>
+          <div class="date">
+            <?php 
+            $event_date=$highlight['start_date'];
+            echo '<p>'.date("d",strtotime($event_date)).'</p>
+            <p>'.date("F",strtotime($event_date)).'</p>
+            <p>'.date("Y",strtotime($event_date)).'</p>';
+            ?>
           </div>
-          <img src="assets/images/events/hunter.jpeg" />
         </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>8</p><p>July</p>2022<p>
-          </div>
-          <img src="assets/images/events/mirror.png" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>20</p><p>July</p>2022<p>
-          </div>
-          <img src="assets/images/events/ngugi.jpeg" />
-        </div>
-        <div class="swiper-slide">
-        <div class="date">
-              <p>27</p><p>July</p>2022<p>
-          </div>
-          <img src="assets/images/events/sidebar.jpeg" />
-        </div>
+        <?php 
+        }
+        ?>
       </div>
     </div>
     </div>
@@ -106,7 +109,7 @@ $categories=getImages();
               <?php
               foreach ($categories as $category){;
               ?>
-                <div class="swiper-slide">
+                <div class="swiper-slide" id="categories" <?php echo "data-value=".$category['category_id'].""?>>
                 <?php
                 echo '<img src="assets/images/categories/'.$category['image_url'].'"'.' alt="">';
                 echo '<h5>'.$category['category_name'].'</h5>';
@@ -124,25 +127,17 @@ $categories=getImages();
     <div class="container-2">
         <div class="swiper categories">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                <img src="assets/images/events/allblack.jpeg" alt="">
+            <?php
+            foreach ($populars as $popular){;
+            ?>
+                <div class="swiper-slide" id="popular" <?php echo "data-value=".$popular['event_id']." data-name=".$popular['event_name']." "?> >
+                <?php
+                echo '<img src="assets/images/events/'.$popular['event_image_url'].'"'.' alt="">';
+                ?>
                 </div>
-                <div class="swiper-slide">
-                <img src="assets/images/events/bark.jpeg" alt="">
-                </div>
-                <div class="swiper-slide">
-                <img src="assets/images/events/hanye.jpeg" alt="">
-                </div>
-                <div class="swiper-slide">
-                <img src="assets/images/events/voices.jpeg" alt="">
-                </div>
-                <div class="swiper-slide">
-                <img src="assets/images/events/wedding.jpeg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                <img src="assets/images/events/wine.jpeg" alt="">
-                </div>
+            <?php
+            }
+            ?>
             </div>
         <div class="swiper-pagination"></div>
         </div>
@@ -171,3 +166,9 @@ $categories=getImages();
         </div>
 
     </div>
+    <script src="/assets/js/slider.js"></script>
+    <script>
+      
+  //     document.querySelectorAll('.swiper-slide')
+  // .forEach(el => console.log(el.dataset.name));
+    </script>

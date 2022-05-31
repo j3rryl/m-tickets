@@ -1,14 +1,3 @@
-<!-- JavaScript -->
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-<!-- CSS -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-<!-- Default theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-<!-- Semantic UI theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-<!-- Bootstrap theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
 <?php 
 session_start(); 
@@ -34,29 +23,24 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['user_id'] = $row['user_id'];
                 //Success
-                header("Location: /index.php");
+                $success='success';
+                $arrays=array(
+                    'success'=>'success'
+                );
+                echo json_encode($arrays);
             } else {
                 //Incorrect password / username
-                // header("Location: /views/login.php?error=Incorect email or password");
-                echo " 
-                <script>
-                alert('Incorrect username or password');
-                    function login(){
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.success('Log In Successful.');
-                    }
-                </script>
-                "; 
+                $arrays=array(
+                    'success'=>'error'
+                );
+                echo json_encode($arrays);
             }
         } else {
             //Incorrect password/ username
-            header("Location: /views/login.php?error=Incorect email or password");
-            echo " 
-                <script>
-                    alertify.set('notifier','position', 'top-right');
-                    alertify.success('Log In Successful.');
-                </script>
-                ";
+            $arrays=array(
+                'success'=>'error'
+            );
+            echo json_encode($arrays);
         }	 
 } 
 ?>

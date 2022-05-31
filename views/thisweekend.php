@@ -1,8 +1,9 @@
 <?php
 include ('templates/header.php');
 require('../Database/functions.php');
-$weekends=getWeekend();
-
+$we_start=strtotime('next saturday');
+$we_end=strtotime('next monday')-1;
+$weekends=getWeekend($we_start,$we_end);
 ?>
 
 <link rel="stylesheet" href="/assets/css/sports.css">
@@ -16,7 +17,7 @@ $weekends=getWeekend();
         <div class="image-container">
             <?php
                 echo '<img src="/assets/images/events/'.$weekend['event_image_url'].'"'.' alt="">';
-                echo '<p>'.$weekend['event_name'].'</p>';
+                echo '<p><a href="ticket.php?event='.$weekend['event_name'].'&event_id='.$weekend['event_id'].'">'.$weekend['event_name'].'</a></p>';
             ?>
         </div>
     <?php

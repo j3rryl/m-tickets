@@ -23,9 +23,10 @@ require_once('../Database/database.php');
     <link rel="stylesheet" href="/assets/css/signup.css">
     <link rel="icon" href="/assets/images/tab-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <!-- Default theme -->
@@ -39,13 +40,13 @@ require_once('../Database/database.php');
 </head>
 <body>
 <div class="signup-container">
-    <form class="form-container" method="POST" action="/controllers/signup.php">
+    <form class="form-container" method="POST">
         <h5>Create An Account</h5>
         <p>Create a free mticket account in order to use all features related to event organizers</p>
         <label for="username">Username</label><br/>
-        <input type="text" name="username" placeholder="Enter Username"><br/>
+        <input type="text" name="username" id="username" placeholder="Enter Username"><br/>
         <label for="email">Email Address</label><br/>
-        <input type="email" class="" name="email" placeholder="Email Address" ><br/>
+        <input type="email" class="" name="email" id="email" placeholder="Email Address" ><br/>
         <label for="password">Password</label><br/>
         <input type="password" name="password" id="password" placeholder="Password" >
         <div class="password-requirements" id="password-requirements">
@@ -65,7 +66,7 @@ require_once('../Database/database.php');
         </div>
         <label for="cpassword">Confirm Password</label><br/>
         <input type="password" name="cpassword" id="" placeholder="Confirm Password"><br/>
-        <button type="submit" onclick="signup()"><a>Create Account</a></button><br />
+        <button type="button" id="register-btn"><a>Create Account</a></button><br />
 
         <a class="sign-in" href="/views/login.php">Sign In?</a>
         <br/><br/>
@@ -74,6 +75,7 @@ require_once('../Database/database.php');
 </div>
 </body>
 <script src="/assets/js/pchecker.js"></script>
+<script src="/assets/js/logins.js"></script>
 <script>
     function signup(){
         alertify.set('notifier','position', 'top-right');

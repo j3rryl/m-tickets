@@ -1,3 +1,79 @@
+.cover-page {
+  max-width: 100vw;
+  height: 100vh;
+  background-image: url("/assets/images/background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cover-page .host-own {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2vw;
+  border: solid #fff;
+  border-radius: 14px;
+  outline: none;
+}
+
+.cover-page .host-own p {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1ch;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.cover-page .host-own button {
+  margin-left: 40%;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1vw;
+  background-color: transparent;
+  border: .5px solid #fff;
+  border-radius: 14px;
+}
+
+.cover-page .host-own button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.cover-page .host-own button:hover {
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background-color: #56A099;
+}
+
+.cover-page .host-own button:hover a {
+  color: white;
+}
+
 .container-1 {
   margin: 0 auto;
   width: 80vw;

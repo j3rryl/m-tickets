@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var cube = new Swiper(".cube-swipe", {
   autoplay: {
       delay: 12000,
@@ -26,5 +27,5 @@ var cube = new Swiper(".cube-swipe", {
       clickable: true,
     },
   });
-
+})
   
