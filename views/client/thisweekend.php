@@ -15,7 +15,7 @@ $weekends=getWeekend($we_start,$we_end);
 <h5><span>S</span>This Weekend</h5>
     <div class="filter-container">
     <?php
-     foreach ($weekends as $weekend){;
+     foreach ($weekends as $weekend){
     ?>
         <div class="image-container">
             <?php
