@@ -4,11 +4,11 @@ $sports=getSports();
 $categories=getCategory($_POST["category_id"]);
 $category_name=getCategories($_POST["category_id"]);
 ?>
-<link rel="stylesheet" href="/assets/css/sports.css">
+<link rel="stylesheet" href="/assets/css/events.css">
 <link rel="stylesheet" href="/assets/css/category.css">
 
-<title>Sports</title>
-<div class="sports">
+<title><?php echo $category_name['category_name']?></title>
+<div class="events-container">
 <h5><span>S</span><?php echo $category_name['category_name']?></h5>
     <div class="filter-container">
     <?php
