@@ -7,11 +7,11 @@ $event_date=
 $weekends=getWeekend($we_start,$we_end);
 ?>
 
-<link rel="stylesheet" href="/assets/css/sports.css">
+<link rel="stylesheet" href="/assets/css/events.css">
 <link rel="stylesheet" href="/assets/css/weekend.css">
 
 <title>This Weekend</title>
-<div class="sports">
+<div class="events-container">
 <h5><span>S</span>This Weekend</h5>
     <div class="filter-container">
     <?php
