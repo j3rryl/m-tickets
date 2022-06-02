@@ -1,4 +1,4 @@
-.sports{
+.events-container{
     margin: 0 auto;
     padding: 1vh;
     h5{
@@ -12,6 +12,52 @@
             margin: 0 2rem 0 0;
         }
     }
+    .search-bar{
+        top: 2vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-right: 30vw;
+        // overflow: hidden;
+    }
+    .search-box{
+        // position: absolute;
+        // top: 50vh;
+        // left: 50vw;
+        transform: translate(50%,0%);
+        background: #fff;
+        border: 1px solid lightgray;
+        height: inherit;
+        border-radius: 40px;
+        padding: 10px;
+    
+    }
+    
+    .search-btn{
+        color: #56A099;
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        text-decoration: none;
+    }
+    .search-txt{
+     border: none;
+     background: #fff;
+     outline: none;
+     float: right;
+     padding: 0;
+     color: black;
+     font-size: 16px;
+     transition: 0.4s;   
+     line-height: 40px;
+    //  width: 0px;
+    }
 }
 .filter-container{
     display: grid;
@@ -23,14 +69,18 @@
     .image-container{
         margin-left: 5vw;
         width: inherit;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px 14px 0 0;
+
         img{
             width: 25vw;
             height: 60vh;
             border-radius: 14px;
         }
         .date{
-            z-index: 1000;
-            width: 15%;
+            width: 10%;
             padding: 0 .8rem;
             word-wrap: break-word;
             background: #68AB6A;
@@ -51,6 +101,31 @@
             a{
                 text-decoration: none;
                 color: black;
+            }
+        }
+    }
+}
+.db-pagination{
+    display: flex;
+    justify-content: center;
+    ul{
+        padding: 1vw 2vw;
+        box-shadow: 1vw 1vh 10px #888888;
+        background-color: #fff;
+        border-radius: 14px;
+        li{
+            list-style: none;
+            display: inline;
+            padding: 1vw;
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            a.active{
+                color: #68AB6A;
+            }
+            a:hover{
+                color: #56A099;
             }
         }
     }

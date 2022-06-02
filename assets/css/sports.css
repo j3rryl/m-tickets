@@ -17,22 +17,30 @@
 }
 
 .filter-container {
+  margin: 0 5vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
   padding: 10px;
   margin-bottom: 10vh;
   row-gap: 15vh;
+  column-gap: 8vw;
 }
-
+.image-container{
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  /* border: 1px solid black; */
+  border-radius: 14px 14px 0 0;
+}
 .filter-container .image-container {
-  margin-left: 5vw;
+  /* margin-left: 5vw; */
   width: inherit;
 }
 
 .filter-container .image-container img {
-  width: 25vw;
+  width: inherit;
   height: 60vh;
   border-radius: 14px;
 }

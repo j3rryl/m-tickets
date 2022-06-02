@@ -1,18 +1,5 @@
 <?php
-require_once('../Database/database.php');
-// if(isset($_POST['username'])){
-//     $email=$_POST['username'];
-//     $password=$_POST['password'];
-    
-//     $sql="select * from tbl_users where email='".$email."'AND password='".$password."' limit 1";
-    
-//     $result=mysql_query($sql);
-    
-//     if(mysql_num_rows($result)==1){
-//         echo " You Have Successfully Logged in";
-//         exit();
-//     }
-// }
+require_once('../../database/database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +8,7 @@ require_once('../Database/database.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/signup.css">
-    <link rel="icon" href="/assets/images/tab-icon.png">
+    <link rel="icon" href="/assets/images/logo/tab-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- Ajax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -68,18 +55,13 @@ require_once('../Database/database.php');
         <input type="password" name="cpassword" id="" placeholder="Confirm Password"><br/>
         <button type="button" id="register-btn"><a>Create Account</a></button><br />
 
-        <a class="sign-in" href="/views/login.php">Sign In?</a>
+        <a class="sign-in" href="/views/login/login.php">Sign In?</a>
         <br/><br/>
 
     </form>
 </div>
 </body>
-<script src="/assets/js/pchecker.js"></script>
-<script src="/assets/js/logins.js"></script>
-<script>
-    function signup(){
-        alertify.set('notifier','position', 'top-right');
- alertify.success('Registration Successful. Log In to Access Your Account.');
-    }
-</script>
+<script src="/assets/js/login/pchecker.js"></script>
+<script src="/assets/js/login/logins.js"></script>
+
 </html>

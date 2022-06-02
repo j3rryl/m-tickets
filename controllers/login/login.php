@@ -1,7 +1,7 @@
 
 <?php 
 session_start(); 
-require_once("../Database/database.php");
+require_once("../../database/database.php");
 if (isset($_POST['email']) && isset($_POST['password'])) {
 	// function validate($data){
     //    $data = trim($data);

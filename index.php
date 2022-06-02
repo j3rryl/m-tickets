@@ -20,6 +20,6 @@
   ?>
   
   <!-- Scripts -->
-  <script src="/assets/js/slider.js"></script>
-  <script src="/helperclass/client/ajax.js"></script>
+  <script src="/assets/js/client/slider.js"></script>
+  <script src="/assets/js/client/ajax.js"></script>
 </html>

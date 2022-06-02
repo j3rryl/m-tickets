@@ -1,5 +1,5 @@
 <?php
-require_once('../Database/functions.php');
+require_once('../../database/functions.php');
 $categories=getImages();
 $current_month=date("F", strtotime('m'));
 $current_year=date("Y");
@@ -166,9 +166,6 @@ $populars=getPopular();
         </div>
 
     </div>
-    <script src="/assets/js/slider.js"></script>
-    <script>
-      
-  //     document.querySelectorAll('.swiper-slide')
-  // .forEach(el => console.log(el.dataset.name));
-    </script>
+    <script src="/assets/js/client/slider.js"></script>
+    <script src="/assets/js/client/home.js"></script>
+

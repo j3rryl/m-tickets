@@ -53,7 +53,8 @@
                 text-align: center;
                 font-weight: 700;
                 margin: 5vh;
-                width: 10vw;
+                width: fit-content;
+                padding: 0 5vw;
                 height: 8vh;
                 background-color: #286b64;
                 border: none;
@@ -117,7 +118,8 @@
             text-align: center;
             font-weight: 700;
             margin: 5vh;
-            width: 8vw;
+            width: fit-content;
+            padding: 1vh 3vw;
             height: 6vh;
             background-color: #286b64;
             border: none;

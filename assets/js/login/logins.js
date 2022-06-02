@@ -12,7 +12,7 @@ $(document).ready(function(){
                 email:email,
                 password:password
             },
-            url:"/controllers/login.php",
+            url:"/controllers/login/login.php",
             dataType:'json',
             success: function(data){
                 if(data.success==='success'){
@@ -40,7 +40,7 @@ $(document).ready(function(){
         } else {
         $.ajax({
             method:'POST',
-            url:'/controllers/signup.php',
+            url:'/controllers/login/signup.php',
             data:{
                 username:username,
                 email:email,
@@ -51,7 +51,7 @@ $(document).ready(function(){
             if(data.success==='success'){
                 // window.open('/index.php');
                 alertify.set('notifier','position', 'top-right');
-                alertify.success('Registration Successful. Proceed to the Login Page'); 
+                alertify.success('Registration Successful. Sign In to Access Your Account.'); 
                 console.log("Success");
                 } else {
                 alertify.set('notifier','position', 'top-right');

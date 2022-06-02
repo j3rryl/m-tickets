@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Icon -->
-    <link rel="icon" href="/assets/images/tab-icon.png">
+    <link rel="icon" href="/assets/images/logo/tab-icon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/header.css">
     <title>MTickets</title>
@@ -18,28 +18,28 @@
     <nav>
         <div class="logo">
             <a href="/index.php">
-            <img src="/assets/images/logo.png" alt="M-Tickets logo">
+            <img src="/assets/images/logo/logo.png" alt="M-Tickets logo">
             </a>
         </div>
         <ul>
-            <li><a href="/index.php" class="active">Home</a></li>
-            <li><a href="/views/events.php">Events</a></li>
-            <li><a href="/views/thisweekend.php">This Weekend</a></li>
-            <li><a class="home-btn">More</a></li>
+            <li class="nav-item active"><a href="/index.php" id="home">Home</a></li>
+            <li class="nav-item"><a href="/views/client/events.php?page=1" id="events">Events</a></li>
+            <li class="nav-item"><a href="/views/client/thisweekend.php" id="weekend">This Weekend</a></li>
+            <li class="nav-item"><a class="home-btn" id="more">More</a></li>
         </ul>
         <div>
-        <li><a href="/views/sell.php">Sell</a></li>
+        <li><a href="#">Sell</a></li>
         <button>
         <?php
         if(isset($_SESSION['first_name'])){
-            echo '<a id="logout-bt" href="/controllers/signout.php">Log Out</a>';
+            echo '<a id="logout-bt" href="/controllers/login/signout.php">Log Out</a>';
         } else {
-            echo '<a href="/views/login.php">Log In</a>';
+            echo '<a href="/views/login/login.php">Log In</a>';
         }
         ?>
         </button>
         </div>
     </nav>
 </header>
-<script src="/assets/js/header.js"></script>
+<script src="/assets/js/client/header.js"></script>
 

@@ -1,6 +1,6 @@
 <?php
-include ('templates/header.php');
-include ('../Database/functions.php');
+include ('../templates/header.php');
+include ('../../database/functions.php');
 $event_id = $_GET['event_id'];
 $event=getEvent($event_id);
 $start_date=$event['start_date'];
@@ -36,7 +36,7 @@ $event_end_time = $end_time->format('h:i a');
 
 <title>Buy Ticket</title>
 <div class="ticket-container">
-    <h5><?php echo $event['event_name']?></h5>
+    <h5 style="margin-top: 4vh;"><?php echo $event['event_name']?></h5>
     <hr/>
     <div class="ticket-description">
         <div class="image-container">
@@ -68,14 +68,14 @@ $event_end_time = $end_time->format('h:i a');
             <option value="gate">Gate Ticket</option>
             <option value="early">Early Bird</option>
         </select>
-        <p value=<?php echo $event['event_price'];?> >Price: <?php echo $event['event_price'];?></p>
+        <p id="event-price" <?php echo 'data-value="'.$event['event_price'].'"';?> >Price: <?php echo $event['event_price'];?></p>
         <select name="number-tickets" id="number-tickets">
             <option disabled selected>Number of Tickets</option>
             <?php for($i=1;$i<=10;$i++){
                 echo '<option value='.$i.'>'.$i.'</option>';
             }?>
         </select>
-        <p>Total: <span>200</span></p>
+        <p>Total: <span id="total-price"></span></p>
         </div>
         <div class="payment-details">
         <select name="payment-method" id="">
@@ -85,20 +85,11 @@ $event_end_time = $end_time->format('h:i a');
         </select><br />
         <input type="email" placeholder="Enter Email"><br/>
         <input type="tel" placeholder="Enter Phone Number"><br/>
-        <button onclick="buyticket()">Checkout!</button>
+        <button id="buy-ticket">Checkout!</button>
         </div>
     </div>
 </div>
-<script>
-
-    $('select').change(function() {
-    console.log($(this).val())
-    });
-    function buyticket(){
-        alertify.set('notifier','position', 'top-right');
- alertify.success('Purchase Successful. Check your email for your ticket.');
-    }
-</script>
+<script src="/assets/js/client/ticket.js"></script>
 <?php
-include ('templates/footer.php');
+include ('../templates/footer.php');
 ?>

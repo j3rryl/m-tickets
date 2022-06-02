@@ -1,5 +1,5 @@
 <?php 
-require_once("../Database/database.php");
+require_once("../../database/database.php");
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
     $firstname="Sample";
     $lastname="Lastss";
