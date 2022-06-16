@@ -3,6 +3,8 @@ include ('../templates/header.php');
 include ('../../database/functions.php');
 $event_id = $_GET['event_id'];
 $event=getEvent($event_id);
+$payments=getPayments();
+
 $start_date=$event['start_date'];
 $end_date=$event['end_date'];
 $start_time = new DateTime($start_date);
@@ -42,7 +44,7 @@ $event_end_time = $end_time->format('h:i a');
         <div class="image-container">
             <img src=<?php echo '/assets/images/events/'.$event['event_image_url'] ?> alt="">
         </div>
-        <div class="event-details">
+        <div class="event-details" id="event-details" <?php echo 'data-value="'.$event['event_id'].'"';?>>
             <h5><span>S</span>Description</h5>
             <p><?php echo $event['event_description']?></p>
             <h5><span>S</span>Time</h5>
@@ -78,13 +80,16 @@ $event_end_time = $end_time->format('h:i a');
         <p>Total: <span id="total-price"></span></p>
         </div>
         <div class="payment-details">
-        <select name="payment-method" id="">
+        <select required name="payment-method" id="payment-method">
             <option disabled selected>Payment Method</option>
-            <option value="mpesa">Mpesa</option>
-            <option value="visa">VISA</option>
+            <?php
+              foreach ($payments as $payment){
+                echo '<option value='.$payment['payment_id'].'>'.$payment['payment_name'].'</option>';
+              }
+            ?>
         </select><br />
-        <input type="email" placeholder="Enter Email"><br/>
-        <input type="tel" placeholder="Enter Phone Number"><br/>
+        <input type="email" id="email" required placeholder="Enter Email"><br/>
+        <input type="tel" id="phone" required placeholder="Enter Phone Number"><br/>
         <button id="buy-ticket">Checkout!</button>
         </div>
     </div>

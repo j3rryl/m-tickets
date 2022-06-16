@@ -1,0 +1,220 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Roboto", sans-serif !important;
+}
+
+.myheader {
+  z-index: 1 !important;
+  position: fixed !important;
+  background: #09726b !important;
+  padding: 20px !important;
+  width: calc(100% - 0%) !important;
+  top: 0 !important;
+  height: 69.9px !important;
+}
+
+.left_area h3 {
+  color: #fff;
+  margin: 0 !important;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span {
+  color: #19B3D3 !important;
+}
+
+.logout_btn {
+  padding: 5px;
+  background: #09726b;
+  text-decoration: none;
+  float: right;
+  margin-top: -40px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.logout_btn:hover {
+  background: #19B3D3;
+}
+
+.submenu {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  /* display: inline-block; */
+}
+
+ul li:hover > ul {
+  display: block;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.right_area {
+  color: #ffffff00 !important;
+}
+.admin-page{
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar {
+  z-index: 1 !important;
+  top: 0 !important;
+  background: #09726b;
+  margin-top: 70px !important;
+  padding-top: 30px !important;
+  position: fixed !important;
+  left: 0 !important;
+  width: 250px !important;
+  height: 100% !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-property: left !important;
+  transition-property: left !important;
+  overflow-y: auto !important;
+}
+
+.profile_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar .profile_info .profile_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.sidebar .profile_info h4 {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.sidebar a:hover {
+  background: #19B3D3;
+}
+
+.active {
+  background: #19B3D3;
+}
+
+.sidebar i {
+  padding-right: 10px;
+}
+
+label #sidebar_btn {
+  z-index: 1;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  left: 300px;
+  font-size: 20px;
+  margin: 5px 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+
+label #sidebar_btn:hover {
+  color: #19B3D3;
+}
+
+#check:checked ~ .sidebar {
+  left: -185px !important;
+}
+
+#check:checked ~ .sidebar a span {
+  display: none !important;
+}
+
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 165px !important;
+  width: 100% !important;
+}
+
+.content {
+  width: 25% !important;
+  margin-top: 60px !important;
+  padding: 20px !important;
+  margin-left: 250px !important;
+  background: url('<?php echo base_url("images/admin/background.png");?>') no-repeat;
+  background-position: center !important;
+  background-size: cover !important;
+  height: 100vh !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#check:checked ~ .content {
+  margin-left: 60px !important;
+}
+
+#check:checked ~ .sidebar .profile_info {
+  display: none !important;
+}
+
+#check {
+  display: none !important;
+}
+
+.mobile_nav {
+  display: none;
+}
+
+.content .card p {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Responsive CSS */

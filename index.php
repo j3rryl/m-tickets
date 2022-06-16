@@ -5,7 +5,6 @@
     
     <!-- Header -->
   <?php
-  session_start();
     include ('views/templates/header.php');
     ?>
 

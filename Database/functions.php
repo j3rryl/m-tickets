@@ -1,5 +1,12 @@
 <?php
 require_once ('database.php');
+function getPayments(){
+    global $conn;
+    $sql='SELECT * FROM tbl_payment';
+    $result=mysqli_query($conn,$sql);
+    $payments=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $payments;
+}
 function getImages(){
     global $conn;
     $sql='SELECT * FROM tbl_categories INNER JOIN 
@@ -35,10 +42,21 @@ function getEvents($start_limit,$events_per_page){
 }
 function getTotalEvents(){
     global $conn;
-    $sql='SELECT * FROM tbl_events';
+    $sql='SELECT * FROM tbl_events INNER JOIN 
+    tbl_categories
+    ON tbl_events.event_category = tbl_categories.category_id JOIN 
+    tbl_event_images
+    ON tbl_event_images.event_id = tbl_events.event_id';
     $result=mysqli_query($conn,$sql);
     $events=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $events;
+}
+function getTicketPurchases(){
+    global $conn;
+    $sql='SELECT * FROM tbl_ticketpurchases';
+    $result=mysqli_query($conn,$sql);
+    $purchases=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $purchases;
 }
 function getHighlights($month,$year){
     global $conn;
@@ -130,5 +148,12 @@ function getWeekend($we_start,$we_end){
     $result=mysqli_query($conn,$sql);
     $weekend=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $weekend;
+}
+function getEventOrganizers(){
+    global $conn;
+    $sql='SELECT * FROM tbl_organizers';
+    $result=mysqli_query($conn,$sql);
+    $organizers=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $organizers;
 }
 ?>
