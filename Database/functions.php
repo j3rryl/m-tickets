@@ -104,9 +104,12 @@ function getCategories($category_id){
     $category=mysqli_fetch_assoc($result);
     return $category;
 }
+//I added tbl_categories JOIN...incase of any errors...
 function getEvent($event_id){
     global $conn;
     $sql='SELECT * FROM tbl_events INNER JOIN 
+    tbl_categories
+    ON tbl_events.event_category = tbl_categories.category_id JOIN
     tbl_event_images
     ON tbl_event_images.event_id = tbl_events.event_id
     WHERE tbl_events.event_id='.$event_id.'';

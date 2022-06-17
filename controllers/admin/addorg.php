@@ -30,22 +30,27 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 } if (isset($_POST['event_name'])) {
     $event=$_POST['event_name'];
     $image=$_POST['image_name'];
+    $image_path=$_POST['image_path'];
     $event_category = $_POST['event_category'];
 	$location = $_POST['location'];
 	$price = $_POST['price'];
-    $start_date = $_POST['start_date'];
-	$end_date = $_POST['end_date'];
+    $start_date = $_POST['event_start_date'];
+	$end_date = $_POST['event_end_date'];
     $description = $_POST['description'];
+    
+    // $event_start_date=date($start_date, strtotime($user_input);
+
     global $conn;
     $sql = "INSERT INTO tbl_events (event_category, event_name, event_location, 
     event_price,event_description, start_date, end_date)
     VALUES ($event_category, '$event', '$location',$price,
-    '$description',$start_date,$end_date)";
+    '$description','$start_date','$end_date')";
     if ($conn->query($sql) === TRUE) {
         $last_id = $conn->insert_id;
         $sql = "INSERT INTO tbl_event_images (event_id,event_image_url)
         VALUES ($last_id, '$image')";
         if ($conn->query($sql) === TRUE) {
+            
             $arrays=array(
                 'success'=>'success',
             );

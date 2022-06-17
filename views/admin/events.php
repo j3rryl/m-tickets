@@ -116,16 +116,42 @@ $categories=getImages();
       </div>
 
       
+      <form action="" class="visa-form" id="visa-form" method="POST" enctype="multipart/form-data">
       <div class="modal-body">
-        <form action="">
-          <label for="">Fgesd</label>
-          <input type="text">
-        </form>
-      </div>
-      <div class="modal-footer">
+      <label for="mpesa-confirm">Event Name:</label><br>
+      <input type="text" class="box1" id="eevent_name" placeholder="Event Name"><br>
+      <label for="mpesa-confirm">Event Category:</label><br>
+    <select id="eevent_category" class="form-control input-lg box1">
+    <option class="box1" disabled selected>Select Category</option>
+            <?php
+              foreach ($categories as $category){
+                echo '<option class="box1" value='.$category['category_id'].'>'.$category['category_name'].'</option>';
+              }
+            ?>
+    </select>
+      <label for="mpesa-confirm">Event Location:</label><br>
+    <input type="text" class="box1" id="eevent_location" placeholder="Event Location"><br>
+    <label for="mpesa-confirm">Event Price:</label><br>
+    <input type="number" class="box1" id="eevent_price" placeholder="Event Price"><br>
+    <label for="mpesa-confirm">Event Image:</label><br>
+    <input type="file" class="box1" id="eevent_image" placeholder="Event Image"><br>
+    <label for="mpesa-confirm">Event Description:</label><br>
+    <textarea rows="4" cols="50" class="box1" id="eevent_description" placeholder="Event Description"></textarea>
+    <br>
+    <label for="mpesa-confirm">Start Date:</label><br>
+    <input type="datetime-local" class="box1" id="estart_date" placeholder="Start Date"><br>
+    <label for="mpesa-confirm">End Date:</label><br>
+    <input type="datetime-local" class="box1" id="eend_date" placeholder="End Date"><br>
+    
+
+          </div>
+          <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        </form>
+        </div>
+
+      
     </div>
   </div>
 </div>
@@ -163,12 +189,12 @@ $categories=getImages();
     <label for="mpesa-confirm">Event Image:</label><br>
     <input type="file" class="box1" name="product_image" id="event_image" placeholder="Event Image"><br>
     <label for="mpesa-confirm">Event Description:</label><br>
-    <textarea rows="4" cols="50" class="box1" name="event_description" id="event_description" placeholder="Event Description"> </textarea>
+    <textarea rows="4" cols="50" class="box1" name="event_description" id="event_description" placeholder="Event Description"></textarea>
     <br>
     <label for="mpesa-confirm">Start Date:</label><br>
-    <input type="date" class="box1" name="product_price" id="start_date" placeholder="Start Date"><br>
+    <input type="datetime-local" step="1" class="box1" name="product_price" id="start_date" placeholder="Start Date"><br>
     <label for="mpesa-confirm">End Date:</label><br>
-    <input type="date" class="box1" name="product_price" id="end_date" placeholder="End Date"><br>
+    <input type="datetime-local" step="1" class="box1" name="product_price" id="end_date" placeholder="End Date"><br>
     
     
       </div>
@@ -206,7 +232,7 @@ $categories=getImages();
 <script>
   $(document).ready(function(){
     $(document).on('click', '#addEvent', function(event){
-      var image=$('#event_image').val();
+      var image_path=$('#event_image').val();
       var event_category=$('#event_category').val();
       var event_name=$('#event_name').val();
       var location=$('#event_location').val();
@@ -215,7 +241,9 @@ $categories=getImages();
       var start_date=$('#start_date').val();
       var end_date=$('#end_date').val();
 
-      var image_name = image.replace(/^.*[\\\/]/, '');
+      var image_name = image_path.replace(/^.*[\\\/]/, '');
+      var event_start_date = start_date.replace(/T/g, ' ');
+      var event_end_date = end_date.replace(/T/g, ' ');
 
       if(image_name==""||event_category==null||event_name==""||location==""||price==""||
         description==""||start_date==""||end_date==""){
@@ -226,14 +254,15 @@ $categories=getImages();
         type:'POST',
         url:"/controllers/admin/addorg.php",
         data:{
+            image_path:image_path,
             image_name:image_name,
             event_category:event_category,
             event_name:event_name,
             location:location,
             price:price,
             description:description,
-            start_date:start_date,
-            end_date:end_date
+            event_start_date:event_start_date,
+            event_end_date:event_end_date
         },
         dataType:'json',
         success: function(data){
@@ -253,9 +282,37 @@ $categories=getImages();
     });
     $(document).on('click', '#edit-event', function(event){
       var event_id = $(this).attr('data-value');
-      alertify.set('notifier','position', 'top-right');
-            alertify.success('Edit.'); 
-            console.log("Success");
+      $.ajax({
+        type:'POST',
+        url:"/controllers/admin/edit.php",
+        data:{
+            event_id:event_id,
+        },
+        dataType:'json',
+        success: function(data){
+          $("#eevent_name").attr("placeholder", data.event_name);
+          $("#eevent_name").val(data.event_name);
+          $("#eevent_location").attr("placeholder", data.event_location);
+          $("#eevent_price").attr("placeholder", data.event_price);
+          $("#eevent_category").val(data.event_category_id).change();
+          // $("#eevent_image").val(data.event_image);
+          $("#eevent_description").attr("placeholder", data.event_description);
+          $("#eevent_description").val(data.event_description);
+
+          var event_start_date = data.event_start_date.replace(/ /g, 'T');
+          var event_end_date = data.event_end_date.replace(/ /g, 'T');
+
+          $("#estart_date").val(event_start_date);
+          $("#eend_date").val(event_end_date);
+          // var event_start_date = start_date.replace(/T/g, ' ');
+          // var event_end_date = end_date.replace(/T/g, ' ');
+          
+          
+        }
+      });
+      // alertify.set('notifier','position', 'top-right');
+      //       alertify.success('Edit.'); 
+      //       console.log("Success");
     });
 
 
