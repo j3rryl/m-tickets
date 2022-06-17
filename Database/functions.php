@@ -117,6 +117,20 @@ function getEvent($event_id){
     $event=mysqli_fetch_array($result);
     return $event;
 }
+function getReceipt($ticket_url){
+    global $conn;
+    $sql='SELECT * FROM tbl_ticketpurchases INNER JOIN 
+    tbl_events
+    ON tbl_ticketpurchases.event_id = tbl_events.event_id JOIN
+    tbl_event_images
+    ON tbl_event_images.event_id = tbl_events.event_id JOIN
+    tbl_payment
+    ON tbl_ticketpurchases.payment_type = tbl_payment.payment_id
+    WHERE tbl_ticketpurchases.ticket_url LIKE "%'.$ticket_url.'%"';
+    $result=mysqli_query($conn,$sql);
+    $ticket=mysqli_fetch_array($result);
+    return $ticket;
+}
 function getSearch($search_text){
     // $search_text=$_POST['search-text'];
     global $conn;

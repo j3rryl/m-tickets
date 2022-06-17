@@ -38,7 +38,7 @@ $event_end_time = $end_time->format('h:i a');
 
 <title>Buy Ticket</title>
 <div class="ticket-container">
-    <h5 style="margin-top: 4vh;"><?php echo $event['event_name']?></h5>
+    <h5 id="event_name" <?php echo 'data-value="'.$event['event_name'].'"';?> style="margin-top: 4vh;"><?php echo $event['event_name']?></h5>
     <hr/>
     <div class="ticket-description">
         <div class="image-container">

@@ -17,6 +17,7 @@ var event_price=$('#event-price').attr('data-value');
         var email=$('#email').val();
         var phone=$('#phone').val();
         var event_id = $('#event-details').attr('data-value');
+        var event_name = $('#event_name').attr('data-value');
         var price = $('#event-price').attr('data-value');
         if(email==''||phone==''||payment_method==''||no_tickets==''){
             alertify.set('notifier','position', 'top-right');
@@ -28,6 +29,7 @@ var event_price=$('#event-price').attr('data-value');
             type:'POST',
             dataType:'json',
             data:{
+                event_name:event_name,
                 total_price:total_price,
                 no_tickets:no_tickets,
                 email:email,
@@ -39,7 +41,7 @@ var event_price=$('#event-price').attr('data-value');
             success:function(data){
                 if(data.success==='success'){
                     alertify.set('notifier','position', 'top-right');
-                    alertify.success('Purchase Successful.'); 
+                    alertify.success('Purchase Successful. Check your email for your Ticket.'); 
                     console.log("Success");
                     } else {
                     alertify.set('notifier','position', 'top-right');
