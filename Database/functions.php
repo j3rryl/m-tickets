@@ -28,6 +28,7 @@ function getSports(){
     $sports=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $sports;
 }
+
 function getEvents($start_limit,$events_per_page){
     global $conn;
     $sql='SELECT * FROM tbl_events INNER JOIN 
@@ -39,6 +40,27 @@ function getEvents($start_limit,$events_per_page){
     $result=mysqli_query($conn,$sql);
     $events=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $events;
+}
+function getEventOrganizerSales(){
+    global $conn;
+    $result = mysqli_query($conn, 'SELECT *,SUM(total_quantity) AS value_sum FROM tbl_ticketpurchases INNER JOIN 
+    tbl_events
+    ON tbl_ticketpurchases.event_id = tbl_events.event_id JOIN 
+    tbl_organizers
+    ON tbl_organizers.organizer_id = tbl_events.added_by 
+    GROUP BY organizer_id'); 
+    // $row = mysqli_fetch_assoc($result); 
+    $row=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    // // $sum = $row['value_sum'];
+    return $row;
+    
+}
+function getTotalRevenue(){
+    global $conn;
+    $result = mysqli_query($conn, 'SELECT SUM(total_quantity) AS value_sum FROM tbl_ticketpurchases'); 
+    $row = mysqli_fetch_assoc($result); 
+    $sum = $row['value_sum'];
+    return $sum;
 }
 function getTotalEvents(){
     global $conn;
@@ -53,7 +75,11 @@ function getTotalEvents(){
 }
 function getTicketPurchases(){
     global $conn;
-    $sql='SELECT * FROM tbl_ticketpurchases';
+    $sql='SELECT * FROM tbl_ticketpurchases INNER JOIN 
+    tbl_events
+    ON tbl_ticketpurchases.event_id = tbl_events.event_id JOIN 
+    tbl_categories
+    ON tbl_events.event_category = tbl_categories.category_id';
     $result=mysqli_query($conn,$sql);
     $purchases=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $purchases;
@@ -154,6 +180,13 @@ function getSearch($search_text){
     $search=mysqli_fetch_all($result,MYSQLI_ASSOC);
     return $search;
     }
+}
+function getUsers(){
+    global $conn;
+    $sql='SELECT * FROM tbl_users';
+    $result=mysqli_query($conn,$sql);
+    $users=mysqli_fetch_all($result,MYSQLI_ASSOC);
+    return $users;
 }
 function getWeekend($we_start,$we_end){
     global $conn;
