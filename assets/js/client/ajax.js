@@ -30,5 +30,17 @@ $(document).ready(function(){
         var event_id = $(this).attr('data-value');
         var event_name = $(this).attr('data-name');
         window.location.replace('/views/client/ticket.php?event='+event_name+'&event_id='+event_id+'')
-        });
+    });
+    $(document).on('click', '#recent1', null, function(event){
+        event.preventDefault();
+        var event_id = $(this).attr('data-value');
+        var event_name = $(this).attr('data-name');
+        window.location.replace('/views/client/ticket.php?event='+event_name+'&event_id='+event_id+'')
+    });
+    $(document).on('click', '#recent2', null, function(event){
+        event.preventDefault();
+        var event_id = $(this).attr('data-value');
+        var event_name = $(this).attr('data-name');
+        window.location.replace('/views/client/ticket.php?event='+event_name+'&event_id='+event_id+'')
+    });
 })

@@ -21,8 +21,8 @@ if(isset($_SESSION['recents'])){
     }
 } else {
 }
-echo $_SESSION['recents'][0];
-print_r($_SESSION['recents']);
+// echo $_SESSION['recents'][0];
+// print_r($_SESSION['recents']);
 
 $event_id = $_GET['event_id'];
 $event=getEvent($event_id);

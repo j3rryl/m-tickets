@@ -10,10 +10,6 @@ $highlights1=getHighlights(5,$current_year);
 $highlights2=getHighlights(6,$current_year);
 $highlights3=getHighlights(7,$current_year);
 $populars=getPopular();
-if(isset($_SESSION['recents'])){
-$recents=getEvent(($_SESSION['recents'][0]));
-print_r($recents);
-}
 
 ?>
 <!-- Slider -->
@@ -22,10 +18,22 @@ print_r($recents);
 
 <!-- CSS -->
 <link rel="stylesheet" href="assets/css/home.css">
-<div class="cover-page">
+<?php
+    $inactive = 1800; //30 minutes in seconds...
+    ini_set('session.gc_maxlifetime', $inactive); // set the session max lifetime to 2 hours
+    session_start();
+    if (isset($_SESSION['time']) && (time() - $_SESSION['time'] > $inactive)) {
+        // last request was more than 2 hours ago
+        session_unset();     // unset $_SESSION variable for this page
+        session_destroy();   // destroy session data
+    }
+    $_SESSION['time'] = time(); // Update session
+      ?>
+<div class="cover-page">  
   <div class="host-own">
     <p>We're Hosting Our Own</p>
-    <p>Wine & Whine</p>
+    <p>
+    Wine & Whine</p>
     <p style="text-align: right;"><?php echo date('d-m-Y');?></p>
     <button><a href="#upcoming" >Buy Tickets</a></button>
   </div>
@@ -148,25 +156,58 @@ print_r($recents);
     </div>
     <h5>Recently Viewed</h5>
     <div class="recently">
+    <?php 
+      if(empty($_SESSION['recents'])){
+        ?>
+    <p class="jump">No recently viewed activities.</p>
+        <?php
+      } else {
+        ?>
     <p class="jump">Jump Right Back In</p>
+        <?php
+      }
+      ?>
     <div class="events-container">
-        <div class="event-recent" style="display: none;">
-            <div class="event-profile">
-                <img src="assets/images/events/wrc.jpeg" alt="">
-            </div>
-            <div class="event-title">
-                <h4>WRC</h4>
-            </div>
-        </div>
+      <?php 
+      if(!empty($_SESSION['recents'])){
+        $recent_id=$_SESSION['recents'][0];
+        $recents=getEvent($recent_id);  
+        $recent_id1=$_SESSION['recents'][0];
+        if(sizeof(($_SESSION['recents']))>1){
+          $recent_id2=$_SESSION['recents'][1];
+          $recents2=getEvent($recent_id2);
+        }
 
-        <div class="event-recent" style="display: none;">
+        $recents1=getEvent($recent_id1);
+      
+      ?>
+        <div class="event-recent" id="recent1" <?php echo "data-value=".$recents1['event_id']." data-name=".$recents1['event_name']." "?>>
             <div class="event-profile">
-                <img src="assets/images/events/hell.jpeg" alt="">
+              <?php
+              echo '<img src="assets/images/events/'.$recents1['event_image_url'].'"'.' alt="">';
+              ?>
             </div>
             <div class="event-title">
-                <h4>Hell's Advocate</h4>
+                <h4 style="text-transform: capitalize;"><?php echo $recents['event_name']?></h4>
             </div>
         </div>
+        <?php 
+        if(sizeof(($_SESSION['recents']))>1){
+        ?>
+        <div class="event-recent" id="recent2" <?php echo "data-value=".$recents2['event_id']." data-name=".$recents2['event_name']." "?>>
+            <div class="event-profile">
+            <?php
+              echo '<img src="assets/images/events/'.$recents2['event_image_url'].'"'.' alt="">';
+              ?>
+            </div>
+            <div class="event-title">
+                <h4 style="text-transform: capitalize;"><?php echo $recents2['event_name']?></h4>
+            </div>
+        </div>
+        <?php 
+          }
+        }
+      ?>
         </div>
 
     </div>
