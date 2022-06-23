@@ -37,7 +37,7 @@ if (isset($_POST['event_id']) &&isset($_POST['total_price']) &&isset($_POST['ema
                CURLOPT_POSTFIELDS => http_build_query([
                   "recipient" => $_POST['email'],
                   "subject"   => 'Ticket Purchase for '.$event_name.' event.',
-                  "body"      => 'Your Ticket Number is #'.$last_id.'. To view your Ticket online open the link below, 
+                  "body"      => 'Your Ticket Number is #MT'.$last_id.'. To view your Ticket online open the link below, 
                   http://localhost:3000/views/client/receipt.php?ticket_url='.$ticket_url.' Happy Partying.'
                ])
             ]);
