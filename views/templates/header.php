@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(isset($_SESSION['recents'])){
+} else {
+    $_SESSION['counter']=0;
+    $_SESSION['recents']=array();
+}
 ?>
 <head>
     <meta charset="UTF-8">

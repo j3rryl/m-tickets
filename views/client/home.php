@@ -10,6 +10,10 @@ $highlights1=getHighlights(5,$current_year);
 $highlights2=getHighlights(6,$current_year);
 $highlights3=getHighlights(7,$current_year);
 $populars=getPopular();
+if(isset($_SESSION['recents'])){
+$recents=getEvent(($_SESSION['recents'][0]));
+print_r($recents);
+}
 
 ?>
 <!-- Slider -->
@@ -146,7 +150,7 @@ $populars=getPopular();
     <div class="recently">
     <p class="jump">Jump Right Back In</p>
     <div class="events-container">
-        <div class="event-recent">
+        <div class="event-recent" style="display: none;">
             <div class="event-profile">
                 <img src="assets/images/events/wrc.jpeg" alt="">
             </div>
@@ -155,7 +159,7 @@ $populars=getPopular();
             </div>
         </div>
 
-        <div class="event-recent">
+        <div class="event-recent" style="display: none;">
             <div class="event-profile">
                 <img src="assets/images/events/hell.jpeg" alt="">
             </div>

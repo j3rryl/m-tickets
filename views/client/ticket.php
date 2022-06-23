@@ -1,6 +1,29 @@
 <?php
 include ('../templates/header.php');
 include ('../../database/functions.php');
+            // array_pop($_SESSION['recents']);
+
+if(isset($_SESSION['recents'])){
+    if($_SESSION['counter']==0){
+        if(sizeof($_SESSION['recents'])>=2){
+            array_pop($_SESSION['recents']);
+        }
+        array_unshift($_SESSION['recents'],$_GET['event_id']);
+        $_SESSION['counter']++;
+    } else if($_SESSION['counter']==1){
+        if(sizeof($_SESSION['recents'])>=2){
+            array_pop($_SESSION['recents']);
+        }
+        array_unshift($_SESSION['recents'],$_GET['event_id']);
+        $_SESSION['counter']=0;
+    } else{
+        array_pop($_SESSION['recents']);
+    }
+} else {
+}
+echo $_SESSION['recents'][0];
+print_r($_SESSION['recents']);
+
 $event_id = $_GET['event_id'];
 $event=getEvent($event_id);
 $payments=getPayments();
