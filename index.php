@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
-    
-    <!-- Header -->
-  <?php
-  session_start();
-    include ('views/templates/header.php');
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/index.css">
+
+<!-- Header -->
+<?php
+    include('views/templates/header.php');
     ?>
 
-    <!-- Body Page -->
-  <div class="ajax-page">
-  
-  </div>
+<!-- Body Page -->
+<div class="ajax-page">
 
-    <!-- Footer -->
-  <?php
-    include ('views/templates/footer.php');
+</div>
+
+<!-- Footer -->
+<?php
+    include('views/templates/footer.php');
   ?>
-  
-  <!-- Scripts -->
-  <script src="/assets/js/client/slider.js"></script>
-  <script src="/assets/js/client/ajax.js"></script>
+
+<!-- Scripts -->
+<script src="/assets/js/client/slider.js"></script>
+<script src="/assets/js/client/ajax.js"></script>
+
 </html>
