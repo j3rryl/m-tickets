@@ -1,5 +1,5 @@
 <?php
-require ('../../database/functions.php');
+require('../../database/functions.php');
 $ticket_url=$_GET['ticket_url'];
 
 // $ticket_url='OiKY6sfd4M';
@@ -7,7 +7,8 @@ $receipt=getReceipt($ticket_url);
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +16,8 @@ $receipt=getReceipt($ticket_url);
     <!-- Icon -->
     <link rel="icon" href="/assets/images/logo/tab-icon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!-- Custom Style -->
@@ -52,8 +54,8 @@ $receipt=getReceipt($ticket_url);
                         </div>
                         <div class="col-5">
                             <p>Client ID</p>
-                            <h2><?php 
-                            if($receipt['client_id']==''){
+                            <h2><?php
+                            if ($receipt['client_id']=='') {
                                 echo 'Anonymous';
                             } else {
                                 echo $receipt['client_id'];
@@ -88,14 +90,15 @@ $receipt=getReceipt($ticket_url);
                         <tr>
                             <td>
                                 <div class="media">
-                                <?php
+                                    <?php
                                 echo '<img class="mr-3 img-fluid" src="/assets/images/events/'.$receipt['event_image_url'].'"'.' alt='.$receipt['event_image_url'].'>';
                                 ?>
                                     <div class="media-body">
                                         <p class="mt-0 title"><?php echo $receipt['event_name'];?></p>
-                                        <span style="text-overflow: ellipsis; display: block; width: 30vw; overflow: hidden; white-space: nowrap;">
-                                        <?php echo $receipt['event_description'];?>
-                                    </span>
+                                        <span
+                                            style="text-overflow: ellipsis; display: block; width: 30vw; overflow: hidden; white-space: nowrap;">
+                                            <?php echo $receipt['event_description'];?>
+                                        </span>
                                     </div>
                                 </div>
                             </td>
@@ -103,7 +106,7 @@ $receipt=getReceipt($ticket_url);
                             <td><?php echo $receipt['ticket_quantity'];?></td>
                             <td><?php echo $receipt['total_quantity'];?></td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </section>
@@ -112,7 +115,11 @@ $receipt=getReceipt($ticket_url);
                 <div class="row">
                     <div class="col-8">
                         <p class="m-0 font-weight-bold"> Note: </p>
-                        <p>You may request to cancel your ticket for a full refund, up to 72 hours before the date and time of the event. Cancellations between 25-72 hours before the event may transferred to a different date/time of the same class. Cancellation requests made within 24 hours of the class date/time may not receive a refund nor a transfer. When you register for a class, you agree to these terms.</p>
+                        <p>You may request to cancel your ticket for a full refund, up to 72 hours before the date and
+                            time of the event. Cancellations between 25-72 hours before the event may transferred to a
+                            different date/time of the same class. Cancellation requests made within 24 hours of the
+                            class date/time may not receive a refund nor a transfer. When you register for a class, you
+                            agree to these terms.</p>
                     </div>
                     <div class="col-4">
                         <table class="table border-0 table-hover">
@@ -163,4 +170,5 @@ $receipt=getReceipt($ticket_url);
         </div>
     </div>
 </body>
+
 </html>

@@ -1,7 +1,8 @@
-<?php 
+<?php
 require_once("../../database/database.php");
-function generateRandomString($length = 10) {
-    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+function generateRandomString($length = 10)
+{
+    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)))), 1, $length);
 }
 
 if (isset($_POST['event_id']) &&isset($_POST['total_price']) &&isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['no_tickets']) && isset($_POST['payment_method'])) {
@@ -16,7 +17,7 @@ if (isset($_POST['event_id']) &&isset($_POST['total_price']) &&isset($_POST['ema
 
     global $conn;
     $client_id="NULL";
-    if(isset($_SESSION['user_id'])){
+    if (isset($_SESSION['user_id'])) {
         $client_id=$_SESSION['user_id'];
     } else {
         $client_id="NULL";
@@ -29,14 +30,14 @@ if (isset($_POST['event_id']) &&isset($_POST['total_price']) &&isset($_POST['ema
     if (mysqli_query($conn, $sql)) {
         $last_id = $conn->insert_id;
         $url = "https://script.google.com/macros/s/AKfycbzVFbaYXHDg1Wxcdd85biXZT5xAkFKVA-RW23z2NJB0Y4-flQ6TmJSZFt0tH2pbhClQUg/exec";
-            $ch = curl_init($url);
-            curl_setopt_array($ch, [
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
                CURLOPT_RETURNTRANSFER => true,
                CURLOPT_FOLLOWLOCATION => true,
                CURLOPT_POSTFIELDS => http_build_query([
                   "recipient" => $_POST['email'],
                   "subject"   => 'Ticket Purchase for '.$event_name.' event.',
-                  "body"      => 'Your Ticket Number is #'.$last_id.'. To view your Ticket online open the link below, 
+                  "body"      => 'Your Ticket Number is #MT'.$last_id.'. To view your Ticket online open the link below, 
                   http://localhost:3000/views/client/receipt.php?ticket_url='.$ticket_url.' Happy Partying.'
                ])
             ]);
@@ -52,8 +53,6 @@ if (isset($_POST['event_id']) &&isset($_POST['total_price']) &&isset($_POST['ema
         );
         echo json_encode($arrays);
     }
-   
-
 } else {
     $arrays=array(
         'success'=>'error',

@@ -1,5 +1,17 @@
 <?php
 include ('../templates/admin_header.php');
+require_once("../../database/functions.php");
+$users=getUsers();
+$events=getTotalEvents();
+$eorg=getEventOrganizers();
+$revenue=getTotalRevenue();
+$rowss=getEventOrganizerSales();
+
+
+$sizeofUsers=sizeof($users);
+$sizeofEvents=sizeof($events);
+$sizeofEorg=sizeof($eorg);
+
 ?>
     <div class="container">
         <div class="header">
@@ -21,7 +33,8 @@ include ('../templates/admin_header.php');
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>2194</h1>
+                        <h1><?php echo $sizeofUsers;
+                        ?></h1>
                         <h3>Users</h3>
                     </div>
                     <div class="icon-case">
@@ -30,7 +43,7 @@ include ('../templates/admin_header.php');
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>53</h1>
+                        <h1><?php echo $sizeofEorg;?></h1>
                         <h3>Event Organizers</h3>
                     </div>
                     <div class="icon-case">
@@ -39,7 +52,7 @@ include ('../templates/admin_header.php');
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>5</h1>
+                        <h1><?php echo $sizeofEvents;?></h1>
                         <h3>Events</h3>
                     </div>
                     <div class="icon-case">
@@ -48,8 +61,8 @@ include ('../templates/admin_header.php');
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>350000</h1>
-                        <h3>Income</h3>
+                        <h1><?php echo 'Kshs. '.$revenue;?></h1>
+                        <h3>Total Sales</h3>
                     </div>
                     <div class="icon-case">
                         <img src="income.png" alt="">
@@ -57,10 +70,16 @@ include ('../templates/admin_header.php');
                 </div>
             </div>
             <div class="content-2">
+            <select required name="payment-method" id="chart-select">
+            <option value disabled='sales'>Sales per:</option>
+            <option selected value='categories'>Categories</option>';
+            <option value='users'>Users</option>
+            <option value='eorg'>Event Organizers</option>
+            </select><br /><br>
                 <div class="recent-payments">
-                <canvas id="barChart" style="width:100%;max-width:700px"></canvas><br>
-                <canvas id="doughChart" style="width:100%;max-width:700px"></canvas><br>
-                <canvas id="lineChart" style="width:100%;max-width:700px"></canvas><br>
+                <canvas id="barChart" style="width:100%;max-width:700px"></canvas><br><br><br>
+                <canvas id="doughChart" style="width:100%;max-width:700px"></canvas><br><br><br>
+                <canvas id="lineChart" style="width:100%;max-width:700px"></canvas><br><br><br>
 
                 </div>
             </div>
