@@ -83,7 +83,7 @@
             return;
           }
           //checking email
-          $.post('check_email.php', {'email':email}, function(resp){
+          $.post('controllers/login/check_email.php', {'email':email}, function(resp){
             if(resp === 'taken'){
               $('.email_err').text('Email Address already taken');            
               if_record_exist = true;
@@ -112,7 +112,7 @@
               }
               $('.msg').html("<img src='https://loading.io/asset/577840' border='0' />");            
               //jQuery ajax post method with 
-              $.post('signup.php', $( "#signup_form" ).serialize(), function(resp){
+              $.post('controllers/login/e_signup.php', $( "#signup_form" ).serialize(), function(resp){
                 if(resp == "done"){
                   $('#login').show();
                   $('#signup').hide();
@@ -140,11 +140,11 @@
                 email:email,
                 password:password
               },
-              url:"login.php",
+              url:"controllers/login/login.php",
               dataType:'json',
               success: function(data){
                 if(data.success==='success'){
-                  window.location.replace('home.php');
+                  window.location.replace('views/eorganiser/home.php');
                   alertify.set('notifier','position', 'top-right');
                   alertify.success('Login Successful.'); 
                   console.log("Success");
