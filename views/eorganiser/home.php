@@ -3,7 +3,7 @@
         include ('../templates/eorg_header.php');
     ?>
     <link rel="stylesheet" href="/assets/css/eorg/home.css">
-    <script src="../../assets/js/eorganiser/ajax.js"></script>
+    <script src="/assets/js/eorganiser/ajax.js"></script>
     <div class="ajax-page">
     </div>
     <main id="home">
