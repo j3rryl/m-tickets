@@ -15,7 +15,7 @@
             </ol>
         </div>
         <div class="content">
-            <div id="wrapper">
+            <!-- <div id="wrapper">
                 <div class="chart">
                     <h3>Amount of tickets sold for the selected event</h3>
                     <table id="data-table" border="1" cellpadding="10" cellspacing="0"
@@ -59,7 +59,7 @@
                     </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
     <?php
