@@ -18,7 +18,7 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1">
           <div class="header-text">
-            <h2>Enter a world of <em>Ticktss</em> &amp; Amazing <em>Awards</em></h2>
+            <h2>Enter a world of <em>Tickets</em> &amp; Amazing <em>Awards</em></h2>
             <p>Mticket is a digital event hosting service with multiple different functionality that allow event organisers to easily and safely create, edit and track their respetctive events as they need. It is free for commercial usage. This is the one of the most reliable digital ticketing system in Kenya</p>
             <div class="buttons">
               <div class="big-border-button">

@@ -2,13 +2,14 @@
   <html lang="en" >
   <head>
     <meta charset="UTF-8">
-    <title>mTicket</title>
+    <title>MTickets</title>
+    <link rel="icon" href="/assets/images/logo/tab-icon.png">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/assets/css/eorg/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
   </head>
@@ -112,7 +113,7 @@
               }
               $('.msg').html("<img src='https://loading.io/asset/577840' border='0' />");            
               //jQuery ajax post method with 
-              $.post('controllers/login/e_signup.php', $( "#signup_form" ).serialize(), function(resp){
+              $.post('/controllers/login/e_signup.php', $( "#signup_form" ).serialize(), function(resp){
                 if(resp == "done"){
                   $('#login').show();
                   $('#signup').hide();
@@ -140,11 +141,11 @@
                 email:email,
                 password:password
               },
-              url:"controllers/login/login.php",
+              url:"/controllers/login/e_login.php",
               dataType:'json',
               success: function(data){
                 if(data.success==='success'){
-                  window.location.replace('views/eorganiser/home.php');
+                  window.location.replace('/views/eorganiser/home.php');
                   alertify.set('notifier','position', 'top-right');
                   alertify.success('Login Successful.'); 
                   console.log("Success");
