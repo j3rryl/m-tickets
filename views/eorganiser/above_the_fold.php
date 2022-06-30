@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="../../assets/css/eorg/above.css">
+  <link rel="stylesheet" href="/assets/css/eorg/above.css">
   <!-- <link rel="stylesheet" href="../../assets/css/eorg/owl.css"> -->
 
   <!-- ***** Main Banner Area Start ***** -->
