@@ -1,7 +1,7 @@
 <?php 
     session_start();
 	if(!ISSET($_SESSION['email'])){
-		header('location:login_signup.php');
+		header('location:/views/login/eorganiser/login_signup.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,18 @@
         <script src="https://kit.fontawesome.com/095af53895.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/assets/css/eorg/header.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <title>mTicket</title>
+         <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+        <title>MTickets</title>
 </head>
 <body>
     <nav>
@@ -24,10 +35,10 @@
                 <li><a href="../eorganiser/home.php">Home</a></li>
                 <li><a href="../eorganiser/event.php">Events</a></li>
                 <li><a href="../eorganiser/track.php">Activity</a></li>
-                <li><i class="fa-regular fa-user"></i>
+                <li id="eorg_id" <?php echo "data-value=".$_SESSION['organizer_id'];?>><i class="fa-regular fa-user"></i>
                     <?php
 				        require'../../database/database.php';
-                        $query = mysqli_query($conn, "SELECT * FROM `tbl_users` WHERE `email`='$_SESSION[email]'") or die(mysqli_error());
+                        $query = mysqli_query($conn, "SELECT * FROM `tbl_organizers` WHERE `email`='$_SESSION[email]'") or die(mysqli_error($conn));
 				        $fetch = mysqli_fetch_array($query);
 				        echo $fetch['username'];
                     ?>

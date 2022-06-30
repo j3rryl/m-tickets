@@ -7,7 +7,7 @@
         $pass = $_POST['pass'];
         $epass = ($pass);
 
-        $query = "INSERT INTO tbl_users(first_Name, last_Name, username, email, password) VALUES ('$fname', '$lname','$fname', '$email', '$epass')";
+        $query = "INSERT INTO tbl_organizers(first_name, last_name, username, email, password) VALUES ('$fname', '$lname','$fname', '$email', '$epass')";
 
         $sql=mysqli_query($conn,$query);
         if($sql){

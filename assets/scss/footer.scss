@@ -1,51 +1,51 @@
-footer{
-    background-color: #000000;
-    background-image: linear-gradient(147deg, rgb(20, 20, 20) 0%, #56A099 74%);
-    height: fit-content;
-    margin: 0 auto;
-    padding: 0 2vw 2vh 2vw;
-    border-radius: 10px 0;
-    .footer-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
-        gap: 1.5rem;
-        .box {
-            text-transform: capitalize;
-            h3{
-                color:#fff;
-                font-size: 1rem;
-                padding-bottom: 2rem;
-            }
-            a{
-                color:#fff9;
-                font-size: 1rem;
-                padding-bottom: 2vh;
-                display: block;
-                text-decoration: none;
-                i{
-                    color:#68AB6A;
-                    padding-right: .5rem;
-                    transition: .2s linear;
-                 }
-             }
-             a:hover{
-                color: #56A099;
-             }
-             a:hover i{
-                padding-right: 1.5vw;
-             }
-        }
-     }
-     .credit{
-        text-align: center;
-        text-transform: capitalize;
-        padding-top: 3vh;
-        margin-top: 3vh;
-        border-top: .1rem solid #fff9;
+footer {
+  background-color: #626262;
+  background-image: linear-gradient(147deg, rgb(20, 20, 20) 0%, #797878 74%);
+  height: fit-content;
+  margin: 0 auto;
+  padding: 0 2vw 2vh 2vw;
+  border-radius: 10px 0;
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10vw, 1fr));
+    gap: 1.5rem;
+    .box {
+      text-transform: capitalize;
+      h3 {
+        color: #fff;
         font-size: 1rem;
-        color:#fff9;
-        span{
-            color:#fff9;
+        padding-bottom: 2rem;
+      }
+      a {
+        color: #fff9;
+        font-size: 1rem;
+        padding-bottom: 2vh;
+        display: block;
+        text-decoration: none;
+        i {
+          color: #68ab6a;
+          padding-right: 0.5rem;
+          transition: 0.2s linear;
         }
-     }
+      }
+      a:hover {
+        color: #56a099;
+      }
+      a:hover i {
+        padding-right: 1.5vw;
+      }
+    }
+  }
+  .credit {
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 3vh;
+    margin-top: 3vh;
+    border-top: 0.1rem solid #fff9;
+    font-size: 1rem;
+    color: #fff9;
+    span {
+      color: #fff9;
+    }
+  }
 }

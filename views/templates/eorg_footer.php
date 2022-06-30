@@ -27,6 +27,7 @@
                                 <li><a href="#">Feedback</a></li>
                                 <li><a href="#">Help</a></li>
                                 <li><a href="#">Sitemap</a></li>
+                                <li><a href="/controllers/login/e_signout.php">Sign Out</a></li>
                             </ul>
                         </div>
                         <div class="social clearfix">
