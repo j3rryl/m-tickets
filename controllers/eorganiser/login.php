@@ -13,7 +13,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $pass = $_POST['password'];
     //1
     global $conn;
-    $sql = "SELECT * FROM tbl_eorganizers WHERE email='$email' AND password='$pass'";
+    $sql = "SELECT * FROM tbl_organizers WHERE email='$email' AND password='$pass'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
