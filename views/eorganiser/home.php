@@ -10,14 +10,8 @@
         <span class="major-line">Got a major event coming... ?</span>
         <section class="content">
             <div class="desc">
-                <h2>Important Text</h2>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! 
-                <ul>
-                    <li>Trail</li>
-                    <li>Choose the event</li>
-                    <li>Edit the event</li>
-                    <li>Finish the attempt</li>
-                </ul>
+                <h2></h2>
+                To Host the Event on this plateform, Click this tile and proceed to filling in all the required details. The Events Charges are variable for the hosting process are variable and adjustables.
             </div>
             <div class="action">
                 <div class="img l1"></div>
@@ -31,27 +25,15 @@
                 <div class="button"><a href="event.php">Edit Event</a></div>
             </div>
             <div class="desc">
-                <h2>Important Text</h2>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! 
-                <ul>
-                    <li>Trail</li>
-                    <li>Choose the event</li>
-                    <li>Edit the event</li>
-                    <li>Finish the attempt</li>
-                </ul>
+                <h2></h2>
+                With M ticket you can edit your event details 
             </div>
         </section>
         <span class="major-line">Track tickets sales and all payments details</span>
         <section class="content">
             <div class="desc">
-                <h2>Important Text</h2>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id non nisi odio velit enim nihil placeat fuga! 
-                <ul>
-                    <li>Trail</li>
-                    <li>Choose the event</li>
-                    <li>Edit the event</li>
-                    <li>Finish the attempt</li>
-                </ul>
+                <h2></h2>
+                Track your events details with M tickets
             </div>
             <div class="action">
                 <div class="img l3"></div>

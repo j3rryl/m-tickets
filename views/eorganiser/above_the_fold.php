@@ -25,7 +25,7 @@
                 <a href="contests.html">Explore Mticket</a>
               </div>
               <div class="icon-button">
-                <a href="https://youtube.com/templatemo" target="_blank"><i class="fa fa-play"></i> Watch Our Video Now</a>
+                <a href="https://youtube.com/" target="_blank"><i class="fa fa-play"></i> Watch Our Video Now</a>
               </div>
             </div>
           </div>
@@ -35,14 +35,14 @@
   </div>
   <!-- ***** Main Banner Area End ***** -->
 
-  <section class="featured-items" id="featured-items">
+  <!-- <section class="featured-items" id="featured-items">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-features owl-carousel" style="position: relative; z-index: 5;">
             <div class="item">
               <div class="thumb">
-                <img src="assets/images/featured-01.jpg" alt="">
+                <img src="../../assets/images/background/A1.jpg" alt="">
                 <div class="hover-effect">
                   <div class="content">
                     <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
@@ -57,7 +57,7 @@
             </div>
             <div class="item">
               <div class="thumb">
-                <img src="assets/images/featured-02.jpg" alt="">
+                <img src="../../assets/images/background/A2.png" alt="">
                 <div class="hover-effect">
                   <div class="content">
                     <h4>Smile In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
@@ -72,7 +72,7 @@
             </div>
             <div class="item">
               <div class="thumb">
-                <img src="assets/images/featured-03.jpg" alt="">
+                <img src="../../assets/images/background/R.jpg" alt="">
                 <div class="hover-effect">
                   <div class="content">
                     <h4>Happy In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
@@ -87,7 +87,7 @@
             </div>
             <div class="item">
               <div class="thumb">
-                <img src="assets/images/featured-01.jpg" alt="">
+                <img src="../../assets/images/background/A1.jpg" alt="">
                 <div class="hover-effect">
                   <div class="content">
                     <h4>Walk In The Nature <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> <span>(4.5)</span></h4>
@@ -179,5 +179,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
