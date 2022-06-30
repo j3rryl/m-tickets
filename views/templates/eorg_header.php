@@ -35,7 +35,7 @@
                 <li><a href="../eorganiser/home.php">Home</a></li>
                 <li><a href="../eorganiser/event.php">Events</a></li>
                 <li><a href="../eorganiser/track.php">Activity</a></li>
-                <li id="eorg_id" <?php echo "data-value=".$_SESSION['organizer_id'];?>><i class="fa-regular fa-user"></i>
+                <li><i class="fa-regular fa-user"></i>
                     <?php
 				        require'../../database/database.php';
                         $query = mysqli_query($conn, "SELECT * FROM `tbl_organizers` WHERE `email`='$_SESSION[email]'") or die(mysqli_error($conn));
