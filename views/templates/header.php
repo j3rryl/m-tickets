@@ -21,11 +21,7 @@ if (isset($_SESSION['recents'])) {
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Slider -->
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-=======
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
->>>>>>> 0c6cdd34b08eee3b13557caf3d91bded933d7645
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 

@@ -1,0 +1,16 @@
+.contact-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    .contact-info{
+border: 1px solid black;
+    }
+    .input-info{
+        .contact-form{
+            text-align: center;
+            margin: 0 auto;
+        }
+border: 1px solid black;
+    }
+}
