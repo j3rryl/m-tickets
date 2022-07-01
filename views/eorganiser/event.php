@@ -17,7 +17,7 @@
             </div>
             <ol class="fa-ul">
                 <li class=""><span class="fa-li"><i class="fas fa-user-circle fa-2x"></i></span><div class="text"><a href="home.php" style="text-decoration:none; color:black">Home</a></div></li>
-                <li class="active"><span class="fa-li"><i class="fas fa-address-card fa-2x"></i></span><div class="text"><a href="event.php" style="text-decoration:none; color:black">Edit Event</a></div></li>
+                <li class="active"><span class="fa-li"><i class="fas fa-address-card fa-2x"></i></span><div class="text"><a href="event.php" style="text-decoration:none; color:black">Add Event</a></div></li>
                 <li class=""><span class="fa-li"><i class="fas fa-fingerprint fa-2x"></i></span><div class="text">Security</div></li>
                 <li class=""><span class="fa-li"><i class="fas fa-comments-dollar fa-2x"></i></i></span><div class="text"><a href="track.php" style="text-decoration:none; color:black">Sales Statement</a></div></li>
             </ol>
